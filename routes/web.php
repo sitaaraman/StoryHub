@@ -5,11 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+use App\Http\Controllers\TestMailController;
 
 Route::get('/', [UserController::class , 'index'])->name('user.index');
 Route::get('/create', [UserController::class , 'create'])->name('user.create');
@@ -35,3 +31,4 @@ Route::get('/comments/{id}/edit', [CommentController::class, 'edit'])->name('com
 Route::post('/comments/{id}/update', [CommentController::class, 'update'])->name('comments.update');
 Route::get('/comments/{id}/delete', [CommentController::class, 'destroy'])->name('comments.delete');
 
+Route::get('/mail',[TestMailController::class, 'send'])->name('mail');
