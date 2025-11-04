@@ -55,7 +55,7 @@
                 <button class="btn btn-success mt-2">Update Comment</button>
             </form>
             
-            <span class="editcomment btn btn-warning mt-2" data-comment-id="{{ $comment->id }}">Edit</span>
+            <span class="editcomment btn btn-warning mt-2" data-comment-id="{{ $comment->id }}">Edit Comment</span>
                 <a href="{{ route('comments.delete' , $comment->id) }}" class="btn btn-danger mt-2">Delete Comment</a>
             @endif
 
