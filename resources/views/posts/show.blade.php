@@ -67,16 +67,22 @@
 
         <script>
             $(document).ready(function(){
+
                 $(".edit-form").hide();
-                
+
                 $(".editcomment").click(function(){
                     var commentId = $(this).data('comment-id');
 
-                    // First, hide all forms
                     $(".edit-form").hide();
+                    $(".editcomment").show(); // Make sure Edit button is visible again after toggling
 
-                    // Then, toggle the form of the clicked comment
+                    $(".editcomment").show();
+
+                    $(this).hide();
+
                     $("#edit-form-" + commentId).toggle();
+
+                    $("#comment-" + commentId + " .btn-danger").show();
                 });
             });
         </script>
