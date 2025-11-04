@@ -55,7 +55,7 @@
 
                     <button class="btn btn-success mt-2">Update Comment</button>
                 </form>
-                |
+                
                 <a href="{{ route('comments.delete' , $comment->id) }}">Delete Comment</a>
             @endif
 
