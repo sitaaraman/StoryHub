@@ -14,15 +14,15 @@ class CommentController extends Controller
         // if(!session()->has('user')){
         //     return redirect()->route('user.login');
         // }
-
+        
         $user = $request->session()->get('user_id');
-         
+        //  return ($user);
         $request->validate([
             'comment' => 'required',
         ]);
 
         Comment::create([
-            'user_id'=>$user->id,
+            'user_id'=>$user,
             'post_id'=>$postId,
             'comment'=>$request->comment,
         ]);
