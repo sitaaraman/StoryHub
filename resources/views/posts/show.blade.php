@@ -43,20 +43,20 @@
             <strong>{{ $comment->user->name }}</strong>:
             <p>{{ $comment->comment }}</p> 
 
-            <span class="editcomment" data-comment-id="{{ $comment->id }}">editcomment</span>
-
+            
             @if(session()->has('user_id') && session('user_id') == $comment->user_id)
-
-                <form action="{{ route('comments.update' , $comment->id) }}" method="POST" class="edit-form" id="edit-form-{{ $comment->id }}">
-                    @csrf
-                    @method('POST')
-
-                    <textarea name="comment" rows="1" class="form-control">{{ $comment->comment }}</textarea>
-
-                    <button class="btn btn-success mt-2">Update Comment</button>
-                </form>
+            
+            <form action="{{ route('comments.update' , $comment->id) }}" method="POST" class="edit-form" id="edit-form-{{ $comment->id }}">
+                @csrf
+                @method('POST')
                 
-                <a href="{{ route('comments.delete' , $comment->id) }}">Delete Comment</a>
+                <textarea name="comment" rows="1" class="form-control">{{ $comment->comment }}</textarea>
+                
+                <button class="btn btn-success mt-2">Update Comment</button>
+            </form>
+            
+            <span class="editcomment btn btn-warning mt-2" data-comment-id="{{ $comment->id }}">Update</span>
+                <a href="{{ route('comments.delete' , $comment->id) }}" class="btn btn-danger mt-2">Delete Comment</a>
             @endif
 
             <hr class="m-0">
@@ -68,7 +68,6 @@
         <script>
             $(document).ready(function(){
                 $(".edit-form").hide();
-
                 
                 $(".editcomment").click(function(){
                     var commentId = $(this).data('comment-id');

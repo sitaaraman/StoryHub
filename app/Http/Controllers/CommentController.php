@@ -58,8 +58,8 @@ class CommentController extends Controller
             'comment' => $request->comment
         ]);
 
-        return redirect()->route('posts.index')
-                ->with('success', 'Comment updated');
+         return redirect()->back()->with('success', 'Comment updated');
+
     }
 
     public function destroy()
