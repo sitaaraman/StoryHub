@@ -41,11 +41,20 @@
         <div>
 
             <strong>{{ $comment->user->name }}</strong>:
-            <p>{{ $comment->comment }}</p>
-            <a>link</a>
+            <p>{{ $comment->comment }}</p> 
 
-            @if(session('user_id') == $comment->user_id)
-                <a href="{{ route('comments.edit' ,$comment->id) }}">Edit Comment</a>
+            <span class="editcomment" data-comment-id="{{ $comment->id }}">editcomment</span>
+
+            @if(session()->has('user_id') && session('user_id') == $comment->user_id)
+
+                <form action="{{ route('comments.update' , $comment->id) }}" method="POST" class="edit-form" id="edit-form-{{ $comment->id }}">
+                    @csrf
+                    @method('POST')
+
+                    <textarea name="comment" rows="1" class="form-control">{{ $comment->comment }}</textarea>
+
+                    <button class="btn btn-success mt-2">Update Comment</button>
+                </form>
                 |
                 <a href="{{ route('comments.delete' , $comment->id) }}">Delete Comment</a>
             @endif
@@ -54,4 +63,22 @@
         </div>
     @endforeach
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $(".edit-form").hide();
+
+                
+                $(".editcomment").click(function(){
+                    var commentId = $(this).data('comment-id');
+
+                    // First, hide all forms
+                    $(".edit-form").hide();
+
+                    // Then, toggle the form of the clicked comment
+                    $("#edit-form-" + commentId).toggle();
+                });
+            });
+        </script>
 @endsection

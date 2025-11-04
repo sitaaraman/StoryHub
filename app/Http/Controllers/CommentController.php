@@ -30,16 +30,16 @@ class CommentController extends Controller
         return redirect()->route('posts.show', $postId);
     }
 
-    public function edit($id)
-    {
-        $comment = Comment::find($id);
+    // public function edit($id)
+    // {
+    //     $comment = Comment::find($id);
 
-        if (session('user_id') != $comment->user_id) {
-            return redirect()->back()->with('error', 'Unauthorized');
-        }
+    //     if (session('user_id') != $comment->user_id) {
+    //         return redirect()->back()->with('error', 'Unauthorized');
+    //     }
 
-        return view('comments.edit', compact('comment'));
-    }
+    //     return view('comments.edit', compact('comment'));
+    // }
 
     
     public function update(Request $request, $id)
