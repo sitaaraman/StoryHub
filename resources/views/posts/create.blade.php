@@ -6,7 +6,7 @@
 
     @if(session()->has('user'))
     
-        <h4 class='text-center m-0 py-3'>Welcome to home page for Post, {{ session('user')->name}} </h4>
+        <h4 class='text-center m-0 py-3'>Welcome to home page for Post, {{ session('user')->name}} ! </h4>
 
         <div class="container">
             <form action="{{ route('posts.store')}}" method="post" class="" enctype="multipart/form-data">

@@ -14,7 +14,7 @@
 
     @else
 
-        <h4 class='text-center m-0 py-3'>Welcome to page for Post</h4>
+        <h4 class='text-center m-0 py-3'>Welcome to page for Post !</h4>
         <div class="text-center mx-auto py-3">
             <a href="{{ route('user.create')}}" class="btn btn-success">Registration</a>
         </div>
