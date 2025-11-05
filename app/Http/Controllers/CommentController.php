@@ -62,7 +62,7 @@ class CommentController extends Controller
 
     }
 
-    public function destroy()
+    public function destroy($id)
     {
         $comment = Comment::find($id);
 
@@ -74,7 +74,7 @@ class CommentController extends Controller
 
         $comment->delete();
 
-        return redirect()->route('posts.index')
+        return redirect()->back()
                 ->with('success', 'Comment deleted');
     }
 }

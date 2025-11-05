@@ -39,7 +39,7 @@ class PostController extends Controller
             }
 
             Post::create([
-                'user_id' => $user->id,
+                'user_id' => $user,
                 'title' => $fileName,
                 'body' => $request->body,
             ]);
