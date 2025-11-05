@@ -20,10 +20,15 @@
                             <a class="nav-link text-white" aria-current="page" href="{{ route('posts.index')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('posts.create')}}">Posts</a>
+                            @if (session()->has('user'))
+                                <a class="nav-link text-white" href="{{ route('posts.create')}}">Posts</a>
+                            @else
+                                <a class="nav-link text-white" href="{{ route('user.login')}}">Posts</a>
+                            @endif
+                            
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Comment</a>
+                            <a class="nav-link text-white" href="{{ route('user.create')}}">Registration</a>
                         </li>
                         
                         @if(session()->has('user'))
