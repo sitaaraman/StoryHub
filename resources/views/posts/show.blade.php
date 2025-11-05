@@ -43,7 +43,6 @@
             <strong>{{ $comment->user->name }}</strong>:
             <p>{{ $comment->comment }}</p> 
 
-            
             @if(session()->has('user_id') && session('user_id') == $comment->user_id)
             
             <form action="{{ route('comments.update' , $comment->id) }}" method="POST" class="edit-form" id="edit-form-{{ $comment->id }}">
@@ -74,7 +73,7 @@
                     var commentId = $(this).data('comment-id');
 
                     $(".edit-form").hide();
-                    $(".editcomment").show(); // Make sure Edit button is visible again after toggling
+                    $(".editcomment").show();
 
                     $(".editcomment").show();
 
