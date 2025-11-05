@@ -26,4 +26,10 @@
 
         </fieldset>
     </form>
+
+    <hr>
+        <p class="text-center">
+            Already registered?
+            <a href="{{ route('user.login') }}" class="text-primary fw-bold">Login here</a>
+        </p>
 @endsection
