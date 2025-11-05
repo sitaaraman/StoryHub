@@ -73,10 +73,10 @@
             </button>
         </div>
 
-            <!-- Copyright -->
+            
         <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2025 Copyright:
-            <a class="text-white" href="#">laravelpractical</a>
+            <a class="text-white" href="#">UserPost Using Laravel 12</a>
         </div>
     </footer>
 </body>
