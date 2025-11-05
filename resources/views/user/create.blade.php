@@ -28,7 +28,7 @@
     </form>
 
     <hr>
-        <p class="text-center">
+        <p class="text-center m-0">
             Already registered?
             <a href="{{ route('user.login') }}" class="text-primary fw-bold">Login here</a>
         </p>

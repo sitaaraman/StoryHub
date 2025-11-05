@@ -25,10 +25,6 @@
                             @else
                                 <a class="nav-link text-white" href="{{ route('user.login')}}">Posts</a>
                             @endif
-                            
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('user.create')}}">Registration</a>
                         </li>
                         
                         @if(session()->has('user'))
@@ -44,6 +40,9 @@
                                 <a class="nav-link text-white" href="{{ route('user.delete', [session('user')->id]) }}">Delete Account</a>
                             </li>
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ route('user.create')}}">Registration</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('user.login') }}">Login</a>
                             </li>
