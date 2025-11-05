@@ -71,7 +71,7 @@ class UserController extends Controller
 
     public function logout(Request $request)
     {
-        $request->session()->forget('user');
+        $request->session()->forget('user_id');
         return redirect()->route('user.login')->with('status', 'Logged out successfully');
     }
 

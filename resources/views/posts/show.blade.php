@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        @if(session('user_id') && session('user')->id == $post->user_id)
+        @if(session('user_id') && session('user_id') == $post->user_id)
         <div class="text-center mx-auto py-3">
             <a href="{{ route('posts.edit', [$post->id])}}" class="btn btn-success">Edit Your Post</a>
             <a href="{{ route('posts.delete', [$post->id])}}" class="btn btn-danger">Delete Your Post</a>
