@@ -13,12 +13,12 @@
                 @csrf 
 
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Post Image</label>
+                    <label for="formFile" class="form-label">Post Image :</label>
                     <input class="form-control" type="file" id="formFile" name="title" accept="image/*">
                 </div>
 
                 <div class="pb-3">
-                    <label for="formBody" class="form-label">Example textarea</label>
+                    <label for="formBody" class="form-label">About Image :</label>
                     <textarea class="form-control" id="formBody" rows="1" name="body"></textarea>
                 </div>
 
