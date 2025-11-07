@@ -5,7 +5,8 @@
 @section('content')
 
   <form method="POST" action="{{ route('user.logincheck') }}" class="mx-3 py-3">
-      @csrf 
+    @csrf 
+
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
@@ -13,6 +14,7 @@
           <span class="text-danger">{{ $message }}</span>
       @enderror
     </div>
+
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" name="password">
@@ -20,8 +22,10 @@
           <span class="text-danger">{{ $message }}</span>
       @enderror
     </div>
+
     <button type="submit" class="btn btn-primary">Login</button>
   </form>
+  
   <hr>
 
     <p class="text-center mb-0">
