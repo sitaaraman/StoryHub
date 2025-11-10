@@ -63,9 +63,9 @@ class PostController extends Controller
         }
 
         $user = $request->session()->get('user_id');
-        $post = Post::find($postId);
+        $post = Post::with('user')->find($postId);
 
-        if($post->user_id != $user->id) {
+        if($post->user_id != session('user_id')) {
             return redirect()->route('posts.index')->with('error', 'unauthorized access');
             
         }
@@ -86,9 +86,9 @@ class PostController extends Controller
         ]);
 
         $user = $request->session()->get('user_id');
-        $post = Post::find($postId);
+        $post = Post::with('user')->find($postId);
 
-        if($post->user_id != $user->id) {
+        if($post->user_id != session('user_id')) {
             return redirect()->route('posts.index')->with('error', 'unauthorized access');
         }
 
